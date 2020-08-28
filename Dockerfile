@@ -1,6 +1,6 @@
 # Note: when updating the go minor version here, also update the go-channel in snap/snapcraft.yml
-FROM golang:1.14.4-buster 
-LABEL maintainer="Steven Allen <steven@stebalien.com>"
+FROM golang:1.14.4-buster
+LABEL maintainer="RB <rajdeep@buidllabs.io>"
 
 # Install deps
 RUN apt-get update && apt-get install -y \
@@ -48,7 +48,7 @@ RUN set -eux; \
 
 # Now comes the actual target image, which aims to be as small as possible.
 FROM busybox:1.31.1-glibc
-LABEL maintainer="Steven Allen <steven@stebalien.com>"
+LABEL maintainer="RB <rajdeep@buidllabs.io>"
 
 # Get the ipfs binary, entrypoint script, and TLS CAs from the build container.
 ENV SRC_DIR /go-ipfs
